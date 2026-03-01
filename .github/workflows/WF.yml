@@ -1,12 +1,16 @@
-name: dinesh raghav
+name: CI Workflow
+
 on:
- push:
-  branches: [main]
- jobs:
-   greet:
-     runs-on: ubuntu-latest
-     steps: 
-       - name: say hello to users
-         run:  echo "hello dosto"
-       - name: say hello to users
-         run:  echo "hello $USER"
+  push:
+    branches:
+      - main
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello to users
+        run: echo "hello dosto"
+
+      - name: Say hello to current user
+        run: echo "hello $USER"
